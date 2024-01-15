@@ -10,8 +10,12 @@ nix run github:shivaraj-bh/search-flake-inputs -- --flake <flake-url> --input <f
 
 ## Examples
 
+### multiple-instance
 ```sh
-$ nix run github:shivaraj-bh/search-flake-inputs -- -f github:nammayatri/nammayatri/814e6fe389f93de81dcb125a97aed611bf52e8bd -i shared-kernel
+nix run github:shivaraj-bh/search-flake-inputs -- -f github:nammayatri/nammayatri/814e6fe389f93de81dcb125a97aed611bf52e8bd -i shared-kernel
+```
+```sh
+# Output
 ╭───┬────────────────────────────────────────────────┬──────────╮
 │ # │                      path                      │   rev    │
 ├───┼────────────────────────────────────────────────┼──────────┤
@@ -20,8 +24,12 @@ $ nix run github:shivaraj-bh/search-flake-inputs -- -f github:nammayatri/nammaya
 ╰───┴────────────────────────────────────────────────┴──────────╯
 
 ```
+### single-instance
 ```sh
-$ nix run github:shivaraj-bh/search-flake-inputs -- -f github:nammayatri/nammayatri -i hedis
+nix run github:shivaraj-bh/search-flake-inputs -- -f github:nammayatri/nammayatri -i hedis
+```
+```sh
+# Output
 ╭───┬───────────────────────────────────────┬──────────╮
 │ # │                 path                  │   rev    │
 ├───┼───────────────────────────────────────┼──────────┤
@@ -29,10 +37,14 @@ $ nix run github:shivaraj-bh/search-flake-inputs -- -f github:nammayatri/nammaya
 ╰───┴───────────────────────────────────────┴──────────╯
 
 ```
+### multiple-instances (local flake path)
 ```sh
-$ git clone https://github.com/shivaraj-bh/search-flake-inputs
-$ cd search-flake-inputs
-$ nix run . -- -f . -i nixpkgs
+git clone https://github.com/shivaraj-bh/search-flake-inputs
+cd search-flake-inputs
+nix run . -- -f . -i nixpkgs
+```
+```sh
+# Output
 ╭───┬──────────────────────────────────────┬──────────╮
 │ # │                 path                 │   rev    │
 ├───┼──────────────────────────────────────┼──────────┤
