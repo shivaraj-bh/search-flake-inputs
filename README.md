@@ -10,7 +10,7 @@ nix run github:shivaraj-bh/search-flake-inputs -- --flake <flake-url> --input <f
 
 ## Examples
 
-### multiple-instance
+### multiple-instances
 ```sh
 nix run github:shivaraj-bh/search-flake-inputs -- -f github:nammayatri/nammayatri/814e6fe389f93de81dcb125a97aed611bf52e8bd -i shared-kernel
 ```
