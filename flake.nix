@@ -21,9 +21,14 @@
             def main [
               --flake (-f): string # The flake URL
              ,--input (-i): string # The flake input to search for
+             ,--json (-j) # Generate JSON output
               ] {
               let metadata_json = get_metadata_json $flake
-              path_with_rev $metadata_json $input
+              if not $json {
+                path_with_rev $metadata_json $input
+              } else {
+                path_with_rev $metadata_json $input | to json
+              }
             }
           '';
         };

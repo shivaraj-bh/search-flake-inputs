@@ -37,23 +37,19 @@ nix run github:shivaraj-bh/search-flake-inputs -- -f github:nammayatri/nammayatr
 ╰───┴───────────────────────────────────────┴──────────╯
 
 ```
-### multiple-instances (local flake path)
+### JSON output
 ```sh
-git clone https://github.com/shivaraj-bh/search-flake-inputs
-cd search-flake-inputs
-nix run . -- -f . -i nixpkgs
+nix run github:shivaraj-bh/search-flake-inputs -- -f github:nammayatri/nammayatri -i hedis --json
 ```
 ```sh
 # Output
-╭───┬──────────────────────────────────────┬──────────╮
-│ # │                 path                 │   rev    │
-├───┼──────────────────────────────────────┼──────────┤
-│ 0 │ locks->nodes->nuenv->inputs->nixpkgs │ 91050ea1 │
-│ 1 │ locks->nodes->root->inputs->nixpkgs  │ ea780f3d │
-╰───┴──────────────────────────────────────┴──────────╯
-
+[
+  {
+    "path": "locks->nodes->euler-hs->inputs->hedis",
+    "rev": "92a3d5ab"
+  }
+]
 ```
-
 ## Development
 ```sh
 nix run nixpkgs#watchexec -- -e nix -e nu nix run . -- -f <flake-url> -i <flake-input>
