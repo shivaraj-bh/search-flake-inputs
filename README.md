@@ -11,7 +11,7 @@ nix run github:shivaraj-bh/search-flake-inputs -- --flake <flake-url> --input <f
 ## Examples
 
 ```sh
-$ nix run . -- -f github:nammayatri/nammayatri/814e6fe389f93de81dcb125a97aed611bf52e8bd -i shared-kernel
+$ nix run github:shivaraj-bh/search-flake-inputs -- -f github:nammayatri/nammayatri/814e6fe389f93de81dcb125a97aed611bf52e8bd -i shared-kernel
 ╭───┬────────────────────────────────────────────────┬──────────╮
 │ # │                      path                      │   rev    │
 ├───┼────────────────────────────────────────────────┼──────────┤
@@ -21,7 +21,7 @@ $ nix run . -- -f github:nammayatri/nammayatri/814e6fe389f93de81dcb125a97aed611b
 
 ```
 ```sh
-$ nix run . -- -f github:nammayatri/nammayatri -i hedis
+$ nix run github:shivaraj-bh/search-flake-inputs -- -f github:nammayatri/nammayatri -i hedis
 ╭───┬───────────────────────────────────────┬──────────╮
 │ # │                 path                  │   rev    │
 ├───┼───────────────────────────────────────┼──────────┤
